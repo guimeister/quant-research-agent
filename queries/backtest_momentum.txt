@@ -1,0 +1,7 @@
+Execute um backtest completo de estratégia momentum para BTC/USDT:
+
+1. Baixe dados diários dos últimos 2 anos (730 dias)
+2. Execute backtest com estratégia momentum, janela de 20 dias
+3. Reporte: Sharpe Ratio, CAGR, Max Drawdown, win rate
+4. Compare com buy-and-hold
+5. Gere relatório HTML com equity curve e distribuição de retornos
