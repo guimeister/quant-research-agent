@@ -1,0 +1,75 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "QuantResearch Agent — Interativo",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_agent.py",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
+      "justMyCode": false
+    },
+    {
+      "name": "QuantResearch Agent — Query rápida",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_agent.py",
+      "args": ["${input:queryInput}"],
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
+      "justMyCode": false
+    },
+    {
+      "name": "QuantResearch Agent — De arquivo",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_agent.py",
+      "args": ["--file", "${input:queryFile}"],
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
+      "justMyCode": false
+    },
+    {
+      "name": "Fetch Market Data (debug)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/data_fetcher.py",
+      "args": ["--symbol", "BTC/USDT", "--source", "ccxt", "--days", "90"],
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "name": "Backtest Engine (debug)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/backtest_engine.py",
+      "args": ["--data", "data/sample.parquet", "--strategy", "momentum"],
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "name": "Model Builder (debug)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/model_builder.py",
+      "args": ["--data", "data/sample.parquet", "--algorithm", "gradient_boosting"],
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "queryInput",
+      "type": "promptString",
+      "description": "Digite a query para o agente",
+      "default": "analise BTC/USDT nos últimos 90 dias"
+    },
+    {
+      "id": "queryFile",
+      "type": "promptString",
+      "description": "Caminho do arquivo de query",
+      "default": "queries/analysis.txt"
+    }
+  ]
+}
