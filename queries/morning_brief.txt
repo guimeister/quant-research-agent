@@ -1,0 +1,8 @@
+Gere um briefing matinal de mercados:
+
+1. Baixe dados das últimas 24h para BTC/USDT, ETH/USDT e SOL/USDT
+2. Calcule variação percentual, volume e RSI de cada um
+3. Verifique os 3 contratos com maior volume no Polymarket hoje
+4. Gere um relatório HTML resumido com essas informações
+
+Seja objetivo e use formato de tabela onde possível.
